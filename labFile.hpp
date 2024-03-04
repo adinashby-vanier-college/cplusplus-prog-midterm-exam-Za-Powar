@@ -13,7 +13,22 @@ double fahrenheitToKelvin(double fahrenheit) {
 }
 
 bool isPrime(int n) {
-    return false;
+    bool primeNumber = true;
+    if (n == 1 or n == 0) {
+        primeNumber = false;
+    }
+    else {
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0 && (i != n or i != 1)){
+                primeNumber = false;
+            }
+            else {
+                primeNumber = true;
+                i = n + 1;
+            }
+        }
+    }
+    return primeNumber;
 }
 
 int sumOfPrimes(int limit) {
